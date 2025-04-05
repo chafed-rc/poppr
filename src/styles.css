@@ -1,0 +1,61 @@
+/* styles.css — basic modal styling */
+
+.poppr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.poppr-modal {
+  background: white;
+  color: #111;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.poppr-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.poppr-content {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.poppr-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.poppr-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.poppr-button.confirm {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.poppr-button.cancel {
+  background-color: #e5e7eb;
+  color: #111;
+}
