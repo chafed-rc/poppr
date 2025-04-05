@@ -105,6 +105,56 @@ export default function Home() {
         >
           ⏳ Promise Modal
         </button>
+
+        <button
+          onClick={async () => {
+            // Step 1: Show a loading modal
+            const id = poppr("Loading user data...", {
+              type: "loading",
+              cancelAction: {
+                label: "Cancel",
+                onClick: () => poppr.close(),
+              },
+            });
+
+            try {
+              // Step 2: Simulate an async action (3 seconds)
+              const result = await new Promise<string>((resolve, reject) =>
+                setTimeout(() => {
+                  const ok = Math.random() > 0.5;
+                  ok
+                    ? resolve("User data loaded successfully.")
+                    : reject("Failed to load user.");
+                }, 3000)
+              );
+
+              // Step 3: Update the modal to a success state
+              poppr(result, {
+                id,
+                type: "success",
+                title: "✅ Success",
+                confirmAction: {
+                  label: "Awesome",
+                  onClick: () => poppr.close(),
+                },
+              });
+            } catch (err) {
+              // Step 4: Update the modal to an error state
+              poppr(String(err), {
+                id,
+                type: "error",
+                title: "❌ Error",
+                cancelAction: {
+                  label: "Close",
+                  onClick: () => poppr.close(),
+                },
+              });
+            }
+          }}
+          className="demo-btn"
+        >
+          🔄 Load & Update Modal
+        </button>
       </div>
 
       <style jsx>{`

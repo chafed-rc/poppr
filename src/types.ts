@@ -7,7 +7,8 @@ export type ModalTypes =
   | "success"
   | "warning"
   | "error"
-  | "confirm";
+  | "confirm"
+  | "loading";
 
 /** A promise, or a function returning a promise */
 export type PromiseT<Data = any> = Promise<Data> | (() => Promise<Data>);

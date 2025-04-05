@@ -59,3 +59,46 @@
   background-color: #e5e7eb;
   color: #111;
 }
+
+.poppr-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.poppr-icon.info {
+  color: #3b82f6; /* Blue */
+}
+
+.poppr-icon.success {
+  color: #22c55e; /* Green */
+}
+
+.poppr-icon.warning {
+  color: #facc15; /* Yellow */
+}
+
+.poppr-icon.error {
+  color: #ef4444; /* Red */
+}
+
+.poppr-icon.primary {
+  color: #6366f1; /* Primary (indigo) */
+}
+
+.poppr-icon.muted {
+  color: #6b7280; /* Gray-500 */
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
