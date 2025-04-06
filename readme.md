@@ -81,7 +81,7 @@ Supports the following built-in types:
 - error
 - confirm
 
-Each comes with its own icon and can be overridden.
+Each comes with its own icon.
 
 ## 💡 Features
 
