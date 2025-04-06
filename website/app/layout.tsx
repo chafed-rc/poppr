@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { PopprModal } from "../../src/index";
+import { PopprModal } from "poppr";
 import { metadata } from "../seo"; // ✅ imported here
 import Footer from "@/components/footer";
 
@@ -28,7 +28,6 @@ export default function RootLayout({
       >
         <PopprModal />
         <main className="flex-grow">{children}</main>
-        <Footer />
       </body>
     </html>
   );

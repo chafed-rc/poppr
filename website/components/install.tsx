@@ -16,7 +16,7 @@ export const Install = () => {
     <div className="flex flex-col gap-2">
       <h1 className="font-semibold">Installation</h1>
       <div className="bg-stone-100 p-2 rounded-md flex flex-row justify-between items-center">
-        <code>npm install poppr lucide-react framer-motion</code>
+        <code className="text-base">npm install poppr</code>
         <button
           onClick={handleCopy}
           className="text-sm text-muted-foreground flex items-center cursor-pointer"

@@ -1,7 +1,8 @@
 "use client";
 
-import { poppr } from "../../src/index";
+import { poppr } from "poppr";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
@@ -15,29 +16,31 @@ export const Hero = () => {
       </p>
 
       <div className="flex gap-2 mt-4">
-        <button
+        <Button
           onClick={() =>
             poppr("A delightful modal system for React.", {
               type: "info",
               title: "Poppr",
             })
           }
-          className="bg-neutral-900 text-white font-semibold px-6 py-2 rounded-md shadow hover:bg-neutral-800 transition cursor-pointer"
         >
           Render a modal
-        </button>
+        </Button>
 
-        <a
-          className="bg-white text-black font-semibold px-6 py-2 rounded-md shadow border border-neutral-300 hover:bg-neutral-100 transition"
-          href="https://github.com/chafed-rc/poppr"
-          target="_blank"
-        >
-          GitHub
-        </a>
+        <Button asChild variant="outline">
+          <a
+            href="https://github.com/chafed-rc/poppr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </Button>
       </div>
+
       <Link
         href="/getting-started"
-        className="mt-4 underline text-sm text-neutral-700 dark:text-neutral-400"
+        className="mt-4 underline text-sm text-muted-foreground"
       >
         Documentation
       </Link>

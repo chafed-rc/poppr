@@ -27,8 +27,8 @@ export const Usage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="font-semibold text-lg">Usage</h1>
+    <div className="flex flex-col gap-2">
+      <h1 className="font-semibold">Usage</h1>
       <p className="text-muted-foreground text-sm">
         Simply render the <code>PopprModal</code> component once in your app,
         then use the <code>poppr()</code> function anywhere to trigger modals

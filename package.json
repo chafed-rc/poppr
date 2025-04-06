@@ -1,6 +1,6 @@
 {
   "name": "poppr",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "A delightful modal system for React with promise and confirm support.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,9 +13,11 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "sideEffects": false,
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "postbuild": "copy src\\styles.css dist\\styles.css",
+    "prepublishOnly": "npm run build && npm run postbuild"
   },
   "author": "Ryan Cuff",
   "license": "MIT",
@@ -28,13 +30,23 @@
     "promise",
     "confirm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcuffdev/poppr"
+  },
+  "bugs": {
+    "url": "https://github.com/rcuffdev/poppr/issues"
+  },
+  "homepage": "https://github.com/rcuffdev/poppr#readme",
   "peerDependencies": {
-    "react": "^18.0.0",
-    "framer-motion": "^10.0.0",
-    "lucide-react": "^0.297.0"
+    "react": "^18.2.0 || ^19.0.0"
   },
   "devDependencies": {
-    "lucide-react": "^0.297.0",
+    "@types/react": "^18.2.48",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "nextra-theme-docs": "^4.2.17",
+    "tw-animate-css": "^1.2.5"
   }
 }

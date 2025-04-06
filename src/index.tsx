@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { poppr } from "./state";
 import { useModalState } from "./hooks";
 import { ModalIcons } from "./assets";
@@ -17,16 +16,12 @@ const PopprModal = () => {
   };
 
   return (
-    <AnimatePresence>
+    <>
       {modal && (
         <div className="poppr-overlay" onClick={handleClose}>
-          <motion.div
-            className="poppr-modal"
-            onClick={(e) => e.stopPropagation()}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.25 }}
+          <div
+            className="poppr-modal animate-fade-in"
+            onClick={(e: { stopPropagation: () => any }) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="poppr-header">
@@ -56,10 +51,10 @@ const PopprModal = () => {
                 </button>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 
