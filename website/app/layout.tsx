@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { PopprModal } from "poppr";
 import { metadata } from "../seo"; // ✅ imported here
-import Footer from "@/components/footer";
 
 export { metadata };
 

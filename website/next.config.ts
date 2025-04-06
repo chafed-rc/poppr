@@ -1,9 +1,8 @@
+// @ts-check
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  compiler: {
-    minify: true,
-  },
+  /* config options here */
 };
 
-export default nextConfig;
+module.exports = nextConfig;
