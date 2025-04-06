@@ -48,6 +48,7 @@ export interface ModalT {
   className?: string;
   classNames?: ModalClassnames;
   position?: ModalPosition;
+  closeOnConfirm?: boolean;
 }
 
 /* ---------------------------------- */

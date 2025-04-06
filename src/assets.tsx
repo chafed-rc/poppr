@@ -51,14 +51,26 @@ const svgIcons = {
       className="poppr-icon warning"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="yellow"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M10.29 3.86l-6.63 11.48a1 1 0 0 0 .86 1.5h13.16a1 1 0 0 0 .86-1.5l-6.63-11.48a1 1 0 0 0-1.72 0z"></path>
-      <line x1="12" y1="9" x2="12" y2="13"></line>
-      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      <circle cx="12" cy="17" r="1" fill="yellow" />
+      <path
+        d="M12 10L12 14"
+        stroke="yellow"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.44722 18.1056L10.2111 4.57771C10.9482 3.10361 13.0518 3.10362 13.7889 4.57771L20.5528 18.1056C21.2177 19.4354 20.2507 21 18.7639 21H5.23607C3.7493 21 2.78231 19.4354 3.44722 18.1056Z"
+        stroke="yellow"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   ),
   error: (
