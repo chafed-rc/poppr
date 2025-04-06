@@ -32,12 +32,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rcuffdev/poppr"
+    "url": "https://github.com/chafed-rc/poppr"
   },
   "bugs": {
-    "url": "https://github.com/rcuffdev/poppr/issues"
+    "url": "https://github.com/chafed-rc/poppr/issues"
   },
-  "homepage": "https://github.com/rcuffdev/poppr#readme",
+  "homepage": "https://github.com/chafed-rc/poppr#readme",
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0"
   },
