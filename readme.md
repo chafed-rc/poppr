@@ -7,7 +7,7 @@ Poppr is a lightweight, flexible modal system for React built to feel as smooth 
 ## 📦 Install
 
 ```bash
-npm install poppr lucide-react framer-motion
+npm install poppr
 ```
 
 ## 🛠️ Quickstart
