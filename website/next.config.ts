@@ -1,8 +1,9 @@
-// @ts-check
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  /* config options here */
+import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
+const nextConfig: NextConfig = {
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 };
 
-module.exports = nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

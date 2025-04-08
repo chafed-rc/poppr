@@ -1,0 +1,53 @@
+# Configuration
+
+The `<PopprModal />` component is the core UI renderer behind every modal triggered via the `poppr()` API. You **must** render it once in your app — typically in your layout file.
+
+---
+
+## ✅ How to use
+
+```tsx
+import { PopprModal } from "poppr";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <PopprModal />
+      </body>
+    </html>
+  );
+}
+```
+
+Once rendered, you can call `poppr()` from anywhere in your app — the modal will appear globally.
+
+## 📦 Props
+
+Currently, `<PopprModal />` does not require any props. All state is internally managed by the poppr store, and configuration is passed via the `poppr()` function.
+
+## 🚧 Coming Soon
+
+The following features will be supported directly via `<PopprModal />` props in upcoming versions:
+
+- **Positioning**: Control where the modal appears (top, center, bottom).
+- **Theme overrides**: Inject dark/light styles or custom class mappings.
+- **Global options**: Set default modal behavior app-wide (e.g., closeOnBackdropClick, durations, etc.).
+
+## 🧠 Tip
+
+Even though `<PopprModal />` is simple, it powers all the advanced functionality under the hood like:
+
+- Stacking multiple modals
+- Confirm + loading flows
+- Type-based styling and icons
+- Animated mounts using Framer Motion
+
+## 🛠 Best Practice
+
+Place it as low in your layout tree as possible to avoid hydration issues and ensure it's only rendered once.

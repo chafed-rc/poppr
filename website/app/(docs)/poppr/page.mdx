@@ -1,0 +1,166 @@
+# Poppr API Reference
+
+Poppr is a flexible modal system for React that lets you trigger customizable modals with just a single function call. Below is a comprehensive guide for using `poppr()` effectively, including all options, types, and best practices.
+
+---
+
+## 🚀 Basic Usage
+
+You can open a simple modal with a string:
+
+```tsx
+poppr("This is a modal");
+```
+
+Or pass an object for full control:
+
+```tsx
+poppr("Success!", {
+  type: "success",
+  cancelAction: {
+    label: "Close",
+    onClick: () => poppr.close(),
+  },
+});
+```
+
+---
+
+## 🎨 Types
+
+The `type` prop affects intent, icon, and styling. Available options:
+
+- `"default"`
+- `"info"`
+- `"success"`
+- `"warning"`
+- `"error"`
+- `"confirm"`
+- `"loading"`
+
+```tsx
+poppr("Heads up!", { type: "info" });
+```
+
+---
+
+## ✅ Confirm Modals
+
+Use `poppr.confirm()` to create a confirm modal that returns a promise:
+
+```tsx
+poppr.confirm(
+  "Delete this item?",
+  async () => {
+    alert("Deleted!");
+  },
+  {
+    cancelAction: {
+      label: "Cancel",
+      onClick: () => poppr.close(),
+    },
+  }
+);
+```
+
+---
+
+## 🔁 Load & Update Modals
+
+Update modals dynamically using an `id`:
+
+```tsx
+const id = poppr("Loading...", {
+  type: "loading",
+  cancelAction: {
+    label: "Cancel",
+    onClick: () => poppr.close(),
+  },
+});
+
+try {
+  const result = await fetchData();
+  poppr(result, {
+    id,
+    type: "success",
+    title: "Loaded",
+    confirmAction: {
+      label: "Awesome",
+      onClick: () => poppr.close(),
+    },
+  });
+} catch (err) {
+  poppr(String(err), {
+    id,
+    type: "error",
+    title: "Error",
+    cancelAction: {
+      label: "Close",
+      onClick: () => poppr.close(),
+    },
+  });
+}
+```
+
+---
+
+## ✨ Props Reference
+
+### `title?: React.ReactNode`
+
+Optional title for the modal.
+
+### `type?: ModalTypes`
+
+Visual intent and icon. See the **Types** section above.
+
+### `confirmAction?: { label: React.ReactNode, onClick: () => void }`
+
+Adds a primary button.
+
+### `cancelAction?: { label: React.ReactNode, onClick: () => void }`
+
+Adds a secondary/cancel button.
+
+### `onClose?: () => void`
+
+Callback fired when modal closes.
+
+### `className?: string`
+
+Custom wrapper class.
+
+### `classNames?: { container, header, body, footer, confirmButton, cancelButton, icon }`
+
+Custom classes for inner elements.
+
+---
+
+## 📦 Advanced (Planned)
+
+### Promise Modal
+
+A proposed API for handling loading/success/error in one call:
+
+```tsx
+poppr.promise(fetchUser(), {
+  loading: "Loading user...",
+  success: (user) => `${user.name} loaded!`,
+  error: "Failed to load user",
+  finally: () => console.log("Done"),
+});
+```
+
+---
+
+## 💡 Best Practices
+
+- Use `id` to persist and update a modal.
+- Use `confirmAction` + `cancelAction` to make interactive prompts.
+- Avoid passing JSX in strings; use `content`, `title`, or render JSX directly.
+
+---
+
+## 🧪 Try It Live
+
+Visit the [Modal Showcase](/modal-showcase) to test each modal variant live.

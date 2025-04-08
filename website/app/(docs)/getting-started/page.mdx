@@ -1,0 +1,50 @@
+# Getting Started
+
+Poppr is a modal component for React. You can read about how it was built here.
+
+## Installation
+
+Install the component from your command line.
+
+### Terminal
+
+```bash
+npm i poppr
+```
+
+## Add Poppr to your app
+
+It can be placed anywhere, even in server components such as `layout.tsx`.
+
+### layout.tsx
+
+```tsx
+import { PopprModal } from "poppr";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <PopprModal />
+      </body>
+    </html>
+  );
+}
+```
+
+## Render a modal
+
+For all options, view the modal page.
+
+```tsx
+import { poppr } from "poppr";
+
+function MyModal() {
+  return <button onClick={() => poppr("This is a modal")}>Render Modal</button>;
+}
+```
